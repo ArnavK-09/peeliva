@@ -1,0 +1,31 @@
+---
+type Props = {
+    title: string;
+    description: string;
+};
+const { title = "Card", description = "" } = Astro.props;
+---
+
+<div
+    class="select-none cursor-help hover:rotate-[2deg] hover:scale-102 hover:brightness-125 ease-in-out transition-all rounded-3xl bg-gradient-to-br from-neutral-9/60 to-black/40 hover:to-neutral-9/40 hover:from-black/40 p-5 sm:p-6 lg:p-8 relative overflow-hidden"
+>
+    <span
+        class="absolute w-40 aspect-square -top-16 -left-16 bg-gradient-to-br from-blue-5/60 to-blue-6 group-hover:to-blue-5/60 group-hover:from-blue-6 rounded-full"
+    ></span>
+    <div
+        class="rounded-xl text-white bg-gradient-to-br to-neutral-8 from-black/88 p3 w-max relative"
+    >
+        <span class="i-carbon-tag-edit flex text-2xl"></span>
+    </div>
+    <div class="mt-6 space-y-3 relative">
+        <h4 class="text-lg md:text-2xl text-neutral-1 font-semibold">
+            {title}
+        </h4>
+        <p class="text-neutral-3">
+            {description}
+        </p>
+    </div>
+    <span
+        class="absolute w-32 aspect-square -bottom-16 -right-16 bg-gradient-to-tl group-hover:to-pink-5/66 group-hover:from-pink-5/88 from-pink-5/66 to-pink-5/88 rounded-full"
+    ></span>
+</div>

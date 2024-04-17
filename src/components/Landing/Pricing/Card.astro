@@ -1,0 +1,55 @@
+---
+type Props = {
+    name?: string;
+    price?: string;
+    features: string[];
+};
+const { name = "Pricing", price = "0$", features = [] } = Astro.props;
+import HR from '../../HR.astro';
+---
+
+<div
+    class="block mx-auto cursor-pointer rounded-2xl p-1 w-full md:w-sm group shadow bg-gradient-to-br bg-gradient-to-br from-blue-5 via-purple-6 to-pink-5 hover:to-pink-6 hover:from-purple-6 hover:via-blue-5"
+>
+    <div
+        class="bg-black/98 relative h-[100%] transition-all group-hover:scale-101 py-10 rounded-2xl"
+    >
+        <div class="text-center pt-3">
+            <span class="text-3xl font-extrabold tracking-wide text-gray-2">
+                {name}
+            </span>
+            <div class="text-2xl md:text-5xl text-white mt-2 font-bold">
+                {price}
+            </div>
+        </div>
+        <HR />
+        <div>
+            <ul class="grid grid-cols-1 place-items-center gap-6 mt-5 sm:mt-6">
+                {
+                    features.map((x) => (
+                        <li class="inline-flex text-center align-center font-medium text-gray-2 text-md md:text-lg items-center gap-x-3">
+                            <span class="bg-gradient-to-r from-blue-6 via-60% via-purple-6 to-pink-5 p-1 rounded-full">
+                                <span class="text-black font-extrabold i-carbon-checkmark flex" />
+                            </span>
+                            {x}
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+        <HR />
+        <div class="w-full absolute -bottom-5">
+            <div class="grid place-items-center">
+                <button
+                    class="lg:hover:scale-103 hover:shadow-purple-5 transition ease-in-out p-1 rounded-xl bg-gradient-to-br from-blue-5 via-purple-6 to-pink-5 hover:to-pink-6 hover:from-purple-6 hover:via-blue-5"
+                >
+                    <div
+                        class="text-xl px-10 w-[70%] py-3 backdrop-blur-xl bg-black/95 rounded-lg w-full h-full text-white font-semibold"
+                    >
+                        Buy Now
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+---
+const headerLinks: Array<{name: string, to?: string}> = [
+    {
+        name: "Home",
+        to: ''
+    },
+    {
+        name: "Pricing"
+    }
+]
+---
+
+<header
+class="absolute left-0 top-0 w-full flex items-center h-24 z-40"
+>
+<nav
+    class="px-5 sm:px-10 md:px-12 lg:px-5 relative mx-auto lg-max-w-7xl w-full flex gap-x-5 justify-between items-center"
+>
+    <div class="flex items-center min-w-max relative">
+        <a href="/" aria-label="logo" class="font-semibold flex items-center gap-x-2">
+            <div class="flex items-center -space-x-3">
+                <span
+                    class="h-6 aspect-square bg-blue-5 rounded-full flex"
+                ></span>
+                <span
+                    class="h-6 bg-pink-5 aspect-square rounded-full flex"
+                ></span>
+            </div>
+            <span
+                class="text-2xl font-bold tracking-wide text-white"
+                >Peeliva</span
+            >
+        </a>
+    </div>
+
+    <div
+        class="py-32 lg:py-0 px-5 sm:px-10 md:px-12 lg:px-0 fixed inset-x-0 h-[100dvh] lg-h-max top-0 -translate-y-10 op-0 invisible lg-visible lg-translate-y-0 lg-op-100 left-0 w-full lg-top-0 lg-relative lg-flex bg-transparent lg-justify-between duration-300 ease-linear"
+    >
+        <ul
+            class="text-gray-2 font-medium tracking-tight flex flex-col lg-flex-row gap-6 lg-items-center lg-w-full lg-justify-center"
+        >
+            {
+                headerLinks.map((link) => (
+                    <li>
+                        <a
+                            aria-label={`Link to ${link.name}`}
+                            href={`/${link.to ?? link.name.toLowerCase()}`}
+                            class="relative underline underline-gray-8 underline-offset-8 py-2.5 duration-300 ease-linear hover:text-white hover:scale-105 hover:underline hover:underline-white hover:underline-offset-4 delay-0 !duration-[200ms] ease-in-out transition-all"
+                        >
+                            {link.name}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+        <div
+            class="flex flex-col sm-flex-row sm-items-center gap-4 lg-min-w-max mt-10 lg-mt-0"
+        >
+            <a
+                aria-label="get started"
+                href="/pricing"
+                class="brightness-100 cursor-pointer group hover:shadow-purple-5 transition ease-in-out rotate-[3deg] hover:rotate-[0deg] p-1 rounded-xl bg-gradient-to-br from-blue-5 via-purple-6 to-pink-5 hover:to-pink-6 hover:from-purple-6 hover:via-blue-5"
+            >
+                <div
+                    class="px-6 py-2 backdrop-blur-xl bg-black/80 rounded-lg w-full h-full text-white font-semibold"
+                >
+                    Get Started
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="flex items-center lg-hidden">
+        <button
+            class="border-l-gray-8 outline-none pl-3 relative py-3 bg-transparent"
+        >
+            <span class="sr-only">Toggle navbar</span>
+            <div
+                id="line-1"
+                aria-hidden="true"
+                class="h-0.5 w-6 rounded bg-gray-3 transition duration-300"
+            >
+            </div>
+            <div
+                id="line-2"
+                aria-hidden="true"
+                class="mt-2 bg-gray-3 rounded h-0.5 w6 transition duration-300"
+            >
+            </div>
+        </button>
+    </div>
+</nav>
+</header>

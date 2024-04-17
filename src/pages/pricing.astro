@@ -1,0 +1,34 @@
+---
+import PricingCard from "../components/Landing/Pricing/Card.astro";
+import Landing from "../layouts/Landing.astro";
+
+export const prerender = true;
+
+console.log(Astro.locals)
+---
+
+<Landing>
+    <div class="absolute top-0 inset-x-0 h-64 flex items-start">
+        <div
+            class="h-24 w-2/3 bg-gradient-to-br blur-2xl via-blue-5 to-transparent from-pink-3 op-40"
+        >
+        </div>
+        <div
+            class="h-20 w-3/5 bg-gradient-to-r op-40 blur-2xl from-transparent to-blue-5/80"
+        >
+        </div>
+    </div>
+    <div class="min-h-100vh mt-35">
+        <div class="text-center my-3">
+            <h2
+                class="font-bold text-4xl md:text-5xl underline underline-offset-10 text-white/97 decoration-wavy"
+            >
+                Our Pricing
+            </h2>
+        </div>
+        <div class="pt-20 pb-10 px-4 md:px-10 gap-y-10 grid grid-cols-1 md:grid-cols-2">
+            <PricingCard name="Rookie" price="FREE" features={["Everything Included"]} />
+            <PricingCard name="Creative" price="SOON" features={["Everything Included", "Custom Properties"]} />
+        </div>
+    </div>
+</Landing>

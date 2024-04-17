@@ -1,0 +1,27 @@
+{
+  "name": "peeliva",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/node": "^8.2.5",
+    "@astrojs/solid-js": "^4.1.0",
+    "astro": "^4.6.1",
+    "solid-js": "^1.8.16",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@iconify-json/carbon": "^1.1.31",
+    "@unocss/preset-icons": "^0.59.2",
+    "@unocss/preset-uno": "^0.59.2",
+    "@unocss/reset": "^0.59.2",
+    "unocss": "^0.59.2"
+  }
+}

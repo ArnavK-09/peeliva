@@ -1,0 +1,33 @@
+---
+import Sidebar from "../components/Dashboard/Sidebar";
+import HR from "../components/HR.astro";
+
+const { title = "Home" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Peeliva Dashboard Control</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body
+    class="w-screen min-h-screen overflow-x-hidden text-white/95 bg-black/99"
+  >
+    <main class="flex pt-4">
+      <section class="px-2">
+        <Sidebar client:load>
+          <HR />
+        </Sidebar>
+      </section>
+      <section class="px-4">
+        <h2 class="text-2xl md:text-4xl my-4 font-bold text-gray-3">{title}</h2>
+        <div class="mt-10 pb-5">
+          <slot />
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
