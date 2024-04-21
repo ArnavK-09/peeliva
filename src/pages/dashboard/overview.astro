@@ -1,0 +1,21 @@
+---
+import MetricCard from "../../components/Dashboard/MetricCard.tsx";
+import UploadFileBanner from "../../components/Dashboard/UploadFileBanner.astro";
+import HR from "../../components/HR.astro";
+import Dashboard from "../../layouts/Dashboard.astro";
+---
+
+<Dashboard title="Overview">
+    <section>
+        <a class="flex flex-wrap md:flex-nowrap gap-4" href="/dashboard/metrics" aria-label="go to metrics">
+            <MetricCard name="Total Files" value={0} />
+            <MetricCard name="Total Views" value={0} />
+            <MetricCard name="Total Downloads" value={0} />
+        </a>
+    </section>
+    <HR class="my-10" />
+    <section>
+        <UploadFileBanner />
+    </section>
+    <HR class="my-10" />
+</Dashboard>

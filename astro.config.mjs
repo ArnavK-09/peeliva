@@ -1,5 +1,5 @@
-import { defineConfig } from 'astro/config';
-import UnoCSS from 'unocss/astro'
+import { defineConfig } from "astro/config";
+import UnoCSS from "unocss/astro";
 import node from "@astrojs/node";
 import solidJs from "@astrojs/solid-js";
 
@@ -7,9 +7,12 @@ import solidJs from "@astrojs/solid-js";
 export default defineConfig({
   output: "hybrid",
   adapter: node({
-    mode: "standalone"
+    mode: "standalone",
   }),
-  integrations: [solidJs(), UnoCSS({
-    injectReset: true 
-  })]
+  integrations: [
+    solidJs(),
+    UnoCSS({
+      injectReset: true,
+    }),
+  ],
 });

@@ -43,25 +43,34 @@ const Sidebar: Component<{ children: Element }> = ({ children: HR }) => {
                 </span>
               </a>
             </div>
-          {HR}
+            {HR}
           </div>
           <nav class="h-full">
             <ul class="text-gray-3 space-y-2">
-              {["Overview", "Metrics"].map((link) => (
-                <li class="w-full group grid place-items-center">
-                  <a
-                    href="#"
-                    class="flex items-center gap-x-4 px-5 py-3 rounded-2xl"
-                  >
-                    <span class="min-w-max inline-flex">
-                      <span class="i-carbon-star font-extrabold text-2xl" />
-                    </span>
-                    <span class="text-gray-1 transition-all group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-br group-hover:from-pink-6 group-hover:via-purple-6 group-hover:to-blue-5 group-hover:from-40% font-bold tracking-wide text-2xl">
-                      {link}
-                    </span>
-                  </a>
-                </li>
-              ))}
+              {["Overview", "View Metrics", "Browse Uploads", "New Upload"].map(
+                (link) => {
+                  const linkURL = () => {
+                    const arr = link.split(" ");
+                    if (arr.length == 1) {
+                      return link;
+                    } else {
+                      return arr[arr.length - 1];
+                    }
+                  };
+                  return (
+                    <li class="w-full group grid place-items-center">
+                      <a
+                        href={`/dashboard/${linkURL()?.toString().toLowerCase()}`}
+                        class="flex items-center gap-x-4 px-5 py-3 rounded-2xl"
+                      >
+                        <span class="text-gray-1 transition-all group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-br group-hover:from-pink-6 group-hover:via-purple-6 group-hover:to-blue-5 group-hover:from-40% font-bold tracking-wide text-2xl">
+                          {link}
+                        </span>
+                      </a>
+                    </li>
+                  );
+                },
+              )}
             </ul>
             {HR}
           </nav>

@@ -1,0 +1,20 @@
+---
+import Dashboard from "../../layouts/Dashboard.astro";
+import HR from "../../components/HR.astro";
+---
+
+<Dashboard title="Browse your Uploads">
+    <section class="grid grid-cols-1 md:grid-cols-3 p-5">
+        <a href="#">
+            <div class="bg-neutral-950 rounded-xl p-5 hover:scale-105 transition-all ease-in-out">
+                <div class="w-full text-center grid place-items-center">
+                    <h2 class="text-gray-1 font-extrabold text-6xl flex i-carbon-document"></h2>
+                </div>
+                <HR />
+                <h3 class="text-gray-3 text-center font-semibold tracking-wide text-xl line-clamp-2">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat optio, laborum consectetur voluptate minus necessitatibus natus eveniet. Quisquam ipsam dolorem vitae doloremque magni, enim voluptatibus, neque fugiat, dolore quasi at.
+                </h3>
+            </div>
+        </a>
+    </section>
+</Dashboard>
