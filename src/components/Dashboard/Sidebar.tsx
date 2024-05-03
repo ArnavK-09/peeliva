@@ -30,7 +30,7 @@ const Sidebar: Component<{ children: Element }> = ({ children: HR }) => {
           <div class="min-h-max py-4 grid place-items-center w-full">
             <div>
               <a
-                href="/dashboard"
+                href="/dashboard/overview"
                 aria-label="logo"
                 class="font-semibold flex items-center gap-x-2"
               >
@@ -47,7 +47,7 @@ const Sidebar: Component<{ children: Element }> = ({ children: HR }) => {
           </div>
           <nav class="h-full">
             <ul class="text-gray-3 space-y-2">
-              {["Overview", "View Metrics", "Browse Uploads", "New Upload"].map(
+              {["Overview", "View Metrics", "Browse Uploads"].map(
                 (link) => {
                   const linkURL = () => {
                     const arr = link.split(" ");
