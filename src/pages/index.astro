@@ -5,8 +5,6 @@ import Hero from "../components/Landing/Hero.astro";
 import LandingLayout from "../layouts/Landing.astro";
 
 export const prerender = true;
-
-
 ---
 
 <LandingLayout>
@@ -18,8 +16,10 @@ export const prerender = true;
 			<h2 class="font-bold text-4xl md:text-5xl underline underline-offset-10 text-white decoration-wavy">Crazy Features...</h2>
 		</div>
 
-		<div class="grid px-4 md:px-10 grid-cols-3 mt-18">
-			<FeatureCard title="Files Encrypted" description="Lorem Dollar messi" />
+		<div class="grid px-4 md:px-10 grid-cols-1 md:grid-cols-2 gap-5 lg:grid-cols-3 mt-18">
+			{[1,2,3,4,5,6].map(() => (
+				<FeatureCard title="Files Encrypted" description="Lorem Dollar messi" />
+			))}
 		</div>
 	</section>
 	<div class="w-[90vw] block mx-auto h-1 bg-gradient-to-r from-blue-6 via-30% via-purple-6 to-pink-5 rounded-2xl"></div>

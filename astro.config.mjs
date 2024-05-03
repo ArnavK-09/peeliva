@@ -1,14 +1,11 @@
 import { defineConfig } from "astro/config";
 import UnoCSS from "unocss/astro";
-import node from "@astrojs/node";
 import solidJs from "@astrojs/solid-js";
 
-// https://astro.build/config
 export default defineConfig({
-  output: "hybrid",
-  adapter: node({
-    mode: "standalone",
-  }),
+  output: "static",
+  site: "https://arnavk-09.github.io",
+  base: "peeliva",
   integrations: [
     solidJs(),
     UnoCSS({

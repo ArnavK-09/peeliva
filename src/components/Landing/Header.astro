@@ -40,7 +40,7 @@ class="absolute left-0 top-0 w-full flex items-center h-24 z-40"
             class="text-gray-2 font-medium tracking-tight flex flex-col lg-flex-row gap-6 lg-items-center lg-w-full lg-justify-center"
         >
             {
-                headerLinks.map((link) => (
+                [...headerLinks, ...headerLinks].map((link) => (
                     <li>
                         <a
                             aria-label={`Link to ${link.name}`}
